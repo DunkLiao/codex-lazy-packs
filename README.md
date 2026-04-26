@@ -73,15 +73,16 @@
 | 06 | [設定 Gemini 免費 API](06-設定Gemini免費API.md) | Gemini 免費 API，網頁工具用 |
 | 07 | [初始化班級工具工作模式](07-初始化班級工具工作模式.md) | AGENTS.md + 收工腳本 |
 | 08 | [把 gpt-image-2 裝進 Codex](08-安裝gpt-image-2生圖.md) | CLI 腳本 + AGENTS.md 提示 |
+| 09 | [用 chezmoi 同步 Codex 設定](09-用chezmoi同步Codex設定.md) | 跨電腦同步 `~/.codex/AGENTS.md` 與全域 skills |
 
 ---
 
 ## 不通用、需特別注意的章節
 
 - **05 / 06**：跟 Codex / Claude 都無關，是「讓你做的網頁工具有 AI 能力」，兩邊通用。
-- **07 收工同步**：Claude 版用 `/收工` Skill，Codex 沒有 Skill，改成 `~/codex-tools/shutdown.sh` + 在 AGENTS.md 寫觸發規則。
+- **07 / 09 收工同步**：Codex 可用全域 skill + `~/.codex/AGENTS.md` 觸發詞；跨電腦同步時用 chezmoi 管理安全項目。
 - **08 生圖**：Claude 版用 SKILL.md，Codex 版改成純 Python 腳本，由 AGENTS.md 規則觸發。
-- **04 第二大腦設定指南**：Claude 版有「每週日自動知識重整排程」，Codex 沒原生排程，改成「系統 cron / Task Scheduler 觸發 codex 一行指令」。
+- **04 第二大腦設定指南**：每週知識重整優先使用 Codex 自動化；CLI 排程只作為進階備援。
 
 ---
 
